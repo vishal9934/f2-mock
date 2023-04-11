@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Age Difference Calculator</title>
+</head>
+<body>
+	<h1>Age Difference Calculator</h1>
+	<form>
+		<label for="your-birthdate">Enter Your Birthdate (mm/dd/yyyy):</label>
+		<input type="date" id="your-birthdate" name="your-birthdate">
+		<br>
+		<label for="other-birthdate">Enter Other Person's Birthdate (mm/dd/yyyy):</label>
+		<input type="date" id="other-birthdate" name="other-birthdate">
+		<br><br>
+		<input type="button" value="Calculate Age Difference" onclick="calculateAgeDifference()">
+	</form>
+
+	<h3 id="age-difference"></h3>
+
+	<script>
+         
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    function calculateAgeDifference(){
+                var yourDate=document.getElementById("your-birthdate").value;
+                var otherDate=document.getElementById("other-birthdate").value;
+
+                var yourBirthdate=new Date(yourDate);
+                var otherBirthdate=new Date(otherDate);
+
+                //calculate in milliseconds
+
+                var diff=Math.abs(yourBirthdate.getTime() - otherBirthdate.getTime());
+
+                //calculate in days
+
+                var diffDays=Math.ceil(diff / (1000*3600*24));
+
+                // calculate in years and date
+                var diffYear=Math.floor(diffDays / 365);
+                var diffDaysRemainder=diffDays % 365;
+
+                var ageDifferenece=document.getElementById("age-difference");
+
+                ageDifferenece.innerHTML="Age difference: " + diffYear + " years and " + diffDaysRemainder + " days";
+             }
+       
+		// function calculateAgeDifference() {
+		// 	// Get the input values
+		// 	var yourBirthdate = document.getElementById("your-birthdate").value;
+		// 	var otherBirthdate = document.getElementById("other-birthdate").value;
+
+		// 	// Convert the input values to Date objects
+		// 	var yourDate = new Date(yourBirthdate);
+		// 	var otherDate = new Date(otherBirthdate);
+         
+		// 	// Calculate the difference in milliseconds
+
+		// 	var diff = Math.abs(yourDate.getTime() - otherDate.getTime());
+            
+		// 	// Calculate the difference in days
+		// 	var diffDays = Math.ceil(diff / (1000 * 3600 * 24));
+
+		// 	// Calculate the difference in years and days
+		// 	var diffYears = Math.floor(diffDays / 365);
+		// 	var diffDaysRemainder = diffDays % 365;
+           
+		// 	// Display the result
+		// 	var ageDifference = document.getElementById("age-difference");
+		// 	ageDifference.innerHTML = "Age difference: " + diffYears + " years and " + diffDaysRemainder + " days";
+		// }
+        
+
+
+
+	</script>
+</body>
+</html>

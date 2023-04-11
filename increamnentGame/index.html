@@ -1,0 +1,118 @@
+<!-- Design a private counter function which exposes increment,
+     decrement and retrieve functionalities- Create two buttons
+      for user A and B- Hitting a user’s button increments it’s counter by 1, and 
+      decrements the other user’s counter by 1 too.- First to reach the value 10 wins. Display "Player A/B wins" -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Private Counter Function</title>
+</head>
+<body>
+    <div class="root">
+        <div id="result"></div>
+        <button id="user-A">User A</button>
+        <button id="user-B">User B</button>
+    </div>
+
+    <script>
+
+      let userA=document.getElementById("user-A");
+
+       let userB=document.getElementById("user-B");
+
+       let countA=0;
+       let countB=0;
+
+       userA.addEventListener("click",A);
+
+       function A (){
+        countA++;
+        countB--;
+       
+        console.log(`score of player A: ${countA}`);
+        console.log(`score of player B: ${countB}`);
+        if(countA==10){
+            document.getElementById("result").innerHTML="Player A Wins";
+        }
+
+
+       }
+
+       userB.addEventListener("click",B);
+
+function B (){
+ countA--;
+ countB++;
+
+ console.log(`score of player A ${countA}`);
+ console.log(`score of player B ${countB}`);
+ if(countB==10){
+     document.getElementById("result").innerHTML="Player B Wins";
+ }
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // Buttons for both users
+        // const user_A = document.getElementById("user-A");
+        // const user_B = document.getElementById("user-B");
+
+        // // Initial values for both users
+        // let countA = 0;
+        // let countB = 0;
+
+        // // adding event listener for user A and counter function for user A
+        // user_A.addEventListener('click', counterA);
+        // function counterA() {
+        //     countA++;
+        //     countB--;
+        //     console.log("user A score = " + countA);
+        //     console.log("user B score = " + countB);
+        //     if(countA == 10){
+        //         document.getElementById("result").innerHTML = "Player A wins";
+        //     }
+        // }
+
+        // // adding event listener for user B and counter function for user B
+        // user_B.addEventListener('click', counterB);
+        // function counterB() {
+        //     countA--;
+        //     countB++;
+        //     console.log("user A score = " + countA);
+        //     console.log("user B score = " + countB);
+        //     if(countB == 10){
+        //         document.getElementById("result").innerHTML = "Player B wins";
+        //     }
+        // }
+    </script>
+</body>
+</html>
